@@ -109,7 +109,7 @@ class STUDENT_MANAGEMENT_SYSTEM:
             print("\n")
         else:
             print("ENTER STUDENT ATTRIBUTE YOU WANT TO DELETE :", end="\n")
-            print("LIKE 'NAME, ROLL NUMBER, AGE, MOBILE NUMBER, ADDRESS, EMAIL, CLASS.")
+            print("NAME, ROLL NUMBER, AGE, MOBILE NR, ADDRESS, EMAIL, CLASS.")
             print("ENTER HERE :", end=" ")
             ATTRIBUTE = input().upper()
 
