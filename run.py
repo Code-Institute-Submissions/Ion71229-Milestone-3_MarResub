@@ -29,8 +29,11 @@ STUDENT_CLASS = []
 
 
 class STUDENT_MANAGEMENT_SYSTEM:
-
+    """
+    all student system here
+    """
     @staticmethod
+    #    THIS FUNCTION HELP TO 'ADD INFORMATION' FOR STUDENT.
     def ADD_STUDENT_INFORMATION():
         print("ADDING STUDENT INFORMATION : \n")
         print("ENTER STUDENT NAME :", end=" ")
@@ -70,7 +73,7 @@ class STUDENT_MANAGEMENT_SYSTEM:
             print("\n")
 
     @staticmethod
-    #   THIS FUNCTION HELP TO 'DELETE' DATA OF STUDENT
+    #    THIS FUNCTION HELP TO 'DELETE' DATA OF STUDENT.
     def DELETE_STUDENT_INFORMATION():
         print("DELETING STUDENT INFORMATION : \n")
 
@@ -208,7 +211,7 @@ class STUDENT_MANAGEMENT_SYSTEM:
                     print("\n")
 
     @staticmethod
-    #    THIS FUNCTION HELP TO UPDATE 'DATA' OF STUDENT.
+    #    THIS FUNCTION HELP TO 'DISPLAY' DATA OF STUDENT.
     def DISPLAY_STUDENT_INFORMATION():
         print("DISPLAYING STUDENTS INFORMATION : \n")
 
