@@ -30,7 +30,7 @@ STUDENT_CLASS = []
 
 class STUDENT_MANAGEMENT_SYSTEM:
     """
-    all student system here
+    all student information here
     """
     @staticmethod
     #    THIS FUNCTION HELP TO 'ADD INFORMATION' FOR STUDENT.
