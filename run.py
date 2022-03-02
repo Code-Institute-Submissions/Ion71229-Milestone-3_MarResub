@@ -28,53 +28,73 @@ STUDENT_MOBILE_NUMBER = []
 STUDENT_CLASS = []
 
 
-class STUDENT_MANAGEMENT_SYSTEM:
-    """
-    all student information here
-    """
+class STUDENT_MANAGEMENT_SYSTEM: # All STUDENT 'INFORMATION' IS HERE.
+   
     @staticmethod
-    #    THIS FUNCTION HELP TO 'ADD INFORMATION' FOR STUDENT.
-    def ADD_STUDENT_INFORMATION():
+    def ADD_STUDENT_INFORMATION(): # THIS FUNCTION HELP TO 'ADD INFORMATION' FOR STUDENT.
         print("ADDING STUDENT INFORMATION : \n")
         print("ENTER STUDENT NAME :", end=" ")
         NAME = input().upper()
+        while not NAME:
+            print("Sorry, Try Again to Enter The  'STUDENT NAME' Again!")
+            print("ENTER STUDENT NAME :", end=" ")
+            NAME = input().upper()
         STUDENT_NAME.append(NAME)
+        
 
         print("ENTER STUDENT ROLL NUMBER :", end=" ")
         ROLL_NUMBER = int(input())
+        while not ROLL_NUMBER:
+            print("Sorry, Try Again to Enter The 'ROLL_NUMBER' Again!")
+            print("ENTER STUDENT ROLL NUMBER :", end=" ")
+            ROLL_NUMBER = int(input())
         STUDENT_ROLL_NUMBER.append(ROLL_NUMBER)
 
         print("ENTER STUDENT AGE :", end=" ")
         AGE = int(input())
+        while not AGE:
+            print("Sorry, Try Again to Enter The 'STUDENT AGE' Again!")
+            print("ENTER STUDENT AGE :", end=" ")
+            AGE = int(input())
         STUDENT_AGE.append(AGE)
 
         print("ENTER STUDENT CLASS :", end=" ")
         CLASS = input().upper()
+        while not CLASS:
+            print("Sorry, Try Again to Enter The 'STUDENT CLASS' Again!")
+            print("ENTER STUDENT CLASS :", end=" ")
+            CLASS = input().upper()
         STUDENT_CLASS.append(CLASS)
 
         print("ENTER STUDENT E-MAIL ID :", end=" ")
         EMAIL_ID = input().upper()
+        while not EMAIL_ID:
+            print("Sorry, Try Again to Enter The 'STUDENT E-MAIL ID' Again!")
+            print("ENTER STUDENT E-MAIL ID :", end=" ")
+            EMAIL_ID = input().upper()
         STUDENT_EMAIL.append(EMAIL_ID)
 
         print("ENTER STUDENT ADDRESS :", end=" ")
         ADDRESS = input().upper()
+        while not ADDRESS:
+            print("Sorry, Try Again to Enter The 'ADDRESS' Again!")
+            print("ENTER STUDENT ADDRESS :", end=" ")
+            ADDRESS = input().upper()
         STUDENT_ADDRESS.append(ADDRESS)
 
         print("ENTER STUDENT MOBILE NUMBER :", end=" ")
-        MOBILE_NUMBER = input()
-        MOBILE_NUMBER_LEN = len(MOBILE_NUMBER)
-
-        if MOBILE_NUMBER_LEN < 10:
-            print("\t PLEASE ENTER VALID TEN DIGIT MOBILE NUMBER.")
-        else:
-            STUDENT_MOBILE_NUMBER.append(MOBILE_NUMBER)
-            print("\n")
-            print("\t STUDENT INFORMATION ADDED SUCCESSFULLY.")
-            print("\n")
+        MOBILE_NUMBER = int(input())
+        while not MOBILE_NUMBER:
+            print("Sorry, Try Again to Enter The 'MOBILE NUMBER' Again!")
+            print("ENTER STUDENT MOBILE NUMBER :", end=" ")
+            MOBILE_NUMBER = int(input())
+        STUDENT_MOBILE_NUMBER.append(MOBILE_NUMBER)
+        print("\n")
+        print("\t STUDENT INFORMATION ADDED SUCCESSFULLY.")
+        print("\n")
 
     @staticmethod
-    #    THIS FUNCTION HELP TO 'DELETE' DATA OF STUDENT.
-    def DELETE_STUDENT_INFORMATION():
+    def DELETE_STUDENT_INFORMATION(): #  THIS FUNCTION HELP TO 'DELETE' DATA OF STUDENT.
         print("DELETING STUDENT INFORMATION : \n")
 
         if len(STUDENT_NAME) == 0 and len(STUDENT_ROLL_NUMBER) == 0 and len(
@@ -82,7 +102,7 @@ class STUDENT_MANAGEMENT_SYSTEM:
                 STUDENT_MOBILE_NUMBER) == 0 and len(
                     STUDENT_ADDRESS) == 0 and len(STUDENT_EMAIL) == 0:
             print("\n")
-            print("\t\t\t 'PLEASE FILL SOME INFORMATION DON'T KEEP IT EMPTY")
+            print("\t 'PLEASE FILL SOME INFORMATION DON'T KEEP IT EMPTY")
             print("\n")
         else:
             print("ENTER STUDENT'S ROLL NUMBER :", end=" ")
@@ -102,8 +122,7 @@ class STUDENT_MANAGEMENT_SYSTEM:
             print("\n")
 
     @staticmethod
-    #    THIS FUNCTION HELP TO 'UPDATE' DATA OF STUDENT.
-    def UPDATE_STUDENT_INFORMATION():
+    def UPDATE_STUDENT_INFORMATION():#    THIS FUNCTION HELP TO 'UPDATE' DATA OF STUDENT.
         print("UPDATE STUDENT INFORMATION : \n")
 
         if len(STUDENT_NAME) == 0 and len(STUDENT_ROLL_NUMBER) == 0 and len(
@@ -188,31 +207,16 @@ class STUDENT_MANAGEMENT_SYSTEM:
             elif ATTRIBUTE == 'MOBILE NUMBER':
                 print("ENTER 'OLD MOBILE NUMBER' :", end=" ")
                 OLD_MOBILE = input()
+                LOC_MOBILE = STUDENT_MOBILE_NUMBER.index(OLD_MOBILE)
 
                 print("ENTER 'NEW MOBILE NUMBER' :", end=" ")
                 NEW_MOBILE = input()
-                MOBILE_NUMBER_LEN = len(OLD_MOBILE)
-                M_N_LEN = len(NEW_MOBILE)
-
-                if MOBILE_NUMBER_LEN < 10:
-                    print(end="\n")
-                    print("PLEASE ENTER TEN DIGIT MOBILE NUMBER.")
-                    print("SYSTEM HAS STOP, PLEASE TRY AGAIN.")
-                    sys.exit()
-                elif M_N_LEN < 10:
-                    print(end="\n")
-                    print("\t PLEASE ENTER VALID TEN DIGIT MOBILE NUMBER.")
-                    print("\t SYSTEM WORKING HAS STOP PLEASE TRY AGAIN.")
-                    sys.exit()
-                else:
-                    LOC_MOBILE = STUDENT_MOBILE_NUMBER.index(OLD_MOBILE)
-                    STUDENT_MOBILE_NUMBER[LOC_MOBILE] = NEW_MOBILE
-                    print("\t 'MOBILE NUMBER UPDATED SUCCESSFULLY.")
-                    print("\n")
+                STUDENT_MOBILE_NUMBER[LOC_MOBILE] = NEW_MOBILE
+                print("\t 'MOBILE NUMBER UPDATED SUCCESSFULLY.")
+                print("\n")
 
     @staticmethod
-    #    THIS FUNCTION HELP TO 'DISPLAY' DATA OF STUDENT.
-    def DISPLAY_STUDENT_INFORMATION():
+    def DISPLAY_STUDENT_INFORMATION():#    THIS FUNCTION HELP TO 'DISPLAY' DATA OF STUDENT.
         print("DISPLAYING STUDENTS INFORMATION : \n")
 
         if len(STUDENT_NAME) == 0 and len(STUDENT_ROLL_NUMBER) == 0 and len(
