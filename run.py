@@ -36,32 +36,33 @@ class STUDENT_MANAGEMENT_SYSTEM: # All STUDENT 'INFORMATION' IS HERE.
         print("ENTER STUDENT NAME :", end=" ")
         NAME = input().upper()
         while not NAME:
-            print("Sorry, Try Again to Enter The  'STUDENT NAME' Again!")
+            print("Sorry, Try to Enter The  'STUDENT NAME' Again!")
             print("ENTER STUDENT NAME :", end=" ")
             NAME = input().upper()
         STUDENT_NAME.append(NAME)
         
-
-        print("ENTER STUDENT ROLL NUMBER :", end=" ")
-        ROLL_NUMBER = int(input())
-        while not ROLL_NUMBER:
-            print("Sorry, Try Again to Enter The 'ROLL_NUMBER' Again!")
-            print("ENTER STUDENT ROLL NUMBER :", end=" ")
-            ROLL_NUMBER = int(input())
+        while True:
+            try:
+                print("ENTER STUDENT ROLL NUMBER :", end=" ")
+                ROLL_NUMBER = int(input())
+                break
+            except ValueError:
+                print("Please Enter a Valid Number")
         STUDENT_ROLL_NUMBER.append(ROLL_NUMBER)
-
-        print("ENTER STUDENT AGE :", end=" ")
-        AGE = int(input())
-        while not AGE:
-            print("Sorry, Try Again to Enter The 'STUDENT AGE' Again!")
-            print("ENTER STUDENT AGE :", end=" ")
-            AGE = int(input())
+        
+        while True:
+            try:
+                print("ENTER STUDENT AGE :", end=" ")
+                AGE = int(input())
+                break
+            except ValueError:
+                print("Please Enter a Valid Number")
         STUDENT_AGE.append(AGE)
 
         print("ENTER STUDENT CLASS :", end=" ")
         CLASS = input().upper()
         while not CLASS:
-            print("Sorry, Try Again to Enter The 'STUDENT CLASS' Again!")
+            print("Sorry, Try to Enter The 'STUDENT CLASS' Again!")
             print("ENTER STUDENT CLASS :", end=" ")
             CLASS = input().upper()
         STUDENT_CLASS.append(CLASS)
@@ -69,7 +70,7 @@ class STUDENT_MANAGEMENT_SYSTEM: # All STUDENT 'INFORMATION' IS HERE.
         print("ENTER STUDENT E-MAIL ID :", end=" ")
         EMAIL_ID = input().upper()
         while not EMAIL_ID:
-            print("Sorry, Try Again to Enter The 'STUDENT E-MAIL ID' Again!")
+            print("Sorry, Try to Enter The 'STUDENT E-MAIL ID' Again!")
             print("ENTER STUDENT E-MAIL ID :", end=" ")
             EMAIL_ID = input().upper()
         STUDENT_EMAIL.append(EMAIL_ID)
@@ -77,17 +78,18 @@ class STUDENT_MANAGEMENT_SYSTEM: # All STUDENT 'INFORMATION' IS HERE.
         print("ENTER STUDENT ADDRESS :", end=" ")
         ADDRESS = input().upper()
         while not ADDRESS:
-            print("Sorry, Try Again to Enter The 'ADDRESS' Again!")
+            print("Sorry, Try to Enter The 'ADDRESS' Again!")
             print("ENTER STUDENT ADDRESS :", end=" ")
             ADDRESS = input().upper()
         STUDENT_ADDRESS.append(ADDRESS)
 
-        print("ENTER STUDENT MOBILE NUMBER :", end=" ")
-        MOBILE_NUMBER = int(input())
-        while not MOBILE_NUMBER:
-            print("Sorry, Try Again to Enter The 'MOBILE NUMBER' Again!")
-            print("ENTER STUDENT MOBILE NUMBER :", end=" ")
-            MOBILE_NUMBER = int(input())
+        while True:
+            try:
+                print("ENTER STUDENT MOBILE NUMBER :", end=" ")
+                MOBILE_NUMBER = int(input())
+                break
+            except ValueError:
+                print("Please Enter a Valid Number")
         STUDENT_MOBILE_NUMBER.append(MOBILE_NUMBER)
         print("\n")
         print("\t STUDENT INFORMATION ADDED SUCCESSFULLY.")
@@ -105,8 +107,13 @@ class STUDENT_MANAGEMENT_SYSTEM: # All STUDENT 'INFORMATION' IS HERE.
             print("\t 'PLEASE FILL SOME INFORMATION DON'T KEEP IT EMPTY")
             print("\n")
         else:
-            print("ENTER STUDENT'S ROLL NUMBER :", end=" ")
-            ROLL_NUMBER = int(input())
+            while True:
+                try:
+                    print("ENTER STUDENT ROLL NUMBER :", end=" ")
+                    ROLL_NUMBER = int(input())
+                    break
+                except ValueError:
+                    print("Please Enter a Valid Number")
             LOC = STUDENT_ROLL_NUMBER.index(ROLL_NUMBER)
 
             STUDENT_ROLL_NUMBER.remove(STUDENT_ROLL_NUMBER[LOC])
@@ -133,40 +140,72 @@ class STUDENT_MANAGEMENT_SYSTEM: # All STUDENT 'INFORMATION' IS HERE.
             print("\t\t\t 'PLEASE FILL SOME INFORMATION DON'T KEEP IT EMPTY")
             print("\n")
         else:
-            print("ENTER STUDENT ATTRIBUTE YOU WANT TO DELETE :", end="\n")
+            print("ENTER STUDENT ATTRIBUTE YOU WANT TO UPDATE :", end="\n")
             print("NAME, ROLL NUMBER, AGE, MOBILE NR, ADDRESS, EMAIL, CLASS.")
             print("ENTER HERE :", end=" ")
             ATTRIBUTE = input().upper()
+            while not ATTRIBUTE:
+                print("Sorry, Try to Enter The 'ATTRIBUTE' Again!")
+                print("ENTER HERE :", end=" ")
+                ATTRIBUTE = input().upper()
 
             if ATTRIBUTE == 'NAME':
                 print("ENTER 'OLD NAME' :", end=" ")
-                OLD_NAME = input()
+                OLD_NAME = input().upper()
+                while not OLD_NAME:
+                    print("Sorry, Try to Enter The 'OLD_NAME' Again!")
+                    print("ENTER 'OLD NAME' :", end=" ")
+                    OLD_NAME = input().upper()
                 LOC_NAME = STUDENT_NAME.index(OLD_NAME)
 
                 print("ENTER 'NEW NAME' :", end=" ")
-                NEW_NAME = input()
+                NEW_NAME = input().upper()
+                while not NEW_NAME:
+                    print("Sorry, Try to Enter The 'NEW_NAME' Again!")
+                    print("ENTER 'NEW NAME' :", end=" ")
+                    NEW_NAME = input().upper()
                 STUDENT_NAME[LOC_NAME] = NEW_NAME
                 print("\t 'NAME UPDATED SUCCESSFULLY.")
                 print("\n")
 
             elif ATTRIBUTE == 'ROLL NUMBER':
-                print("ENTER 'OLD ROLL NUMBER' :", end=" ")
-                OLD_ROLL_NUMBER = int(input())
+                while True:
+                    try:
+                        print("ENTER 'OLD ROLL NUMBER' :", end=" ")
+                        OLD_ROLL_NUMBER = int(input())
+                        break
+                    except ValueError:
+                        print("Please Enter a Valid 'OLD ROLL NUMBER'")
                 LOC_ROLL = STUDENT_ROLL_NUMBER.index(OLD_ROLL_NUMBER)
 
-                print("ENTER 'NEW ROLL NUMBER' :", end=" ")
-                NEW_ROLL = int(input())
+                while True:
+                    try:
+                        print("ENTER 'NEW ROLL NUMBER' :", end=" ")
+                        NEW_ROLL = int(input())
+                        break
+                    except ValueError:
+                        print("Please Enter a Valid 'NEW ROLL NUMBER'")
                 STUDENT_ROLL_NUMBER[LOC_ROLL] = NEW_ROLL
                 print("\t 'ROLL NUMBER UPDATED SUCCESSFULLY.")
                 print("\n")
 
             elif ATTRIBUTE == 'AGE':
-                print("ENTER 'OLD AGE' :", end=" ")
-                OLD_AGE = int(input())
+                while True:
+                    try:
+                        print("ENTER 'OLD AGE' :", end=" ")
+                        OLD_AGE = int(input())
+                        break
+                    except ValueError:
+                        print("Please Enter a Valid 'OLD AGE'")
                 LOC_ROLL = STUDENT_AGE.index(OLD_AGE)
 
-                print("ENTER 'NEW AGE' :", end=" ")
-                NEW_AGE = int(input())
+                while True:
+                    try:
+                        print("ENTER 'NEW AGE' :", end=" ")
+                        NEW_AGE = int(input())
+                        break
+                    except ValueError:
+                        print("Please Enter a Valid 'NEW AGE'")
                 STUDENT_AGE[LOC_ROLL] = NEW_AGE
                 print("\t 'AGE UPDATED SUCCESSFULLY.")
                 print("\n")
@@ -174,10 +213,18 @@ class STUDENT_MANAGEMENT_SYSTEM: # All STUDENT 'INFORMATION' IS HERE.
             elif ATTRIBUTE == 'ADDRESS':
                 print("ENTER 'OLD ADDRESS' :", end=" ")
                 OLD_ADDRESS = input()
+                while not OLD_ADDRESS:
+                    print("Sorry, Try to Enter The 'OLD_ADDRESS' Again!")
+                    print("ENTER 'OLD ADDRESS' :", end=" ")
+                    OLD_ADDRESS = input()
                 LOC_ADDRESS = STUDENT_ADDRESS.index(OLD_ADDRESS)
 
                 print("ENTER 'NEW ADDRESS' :", end=" ")
                 NEW_ADDRESS = input()
+                while not NEW_ADDRESS:
+                    print("Sorry, Try to Enter The 'NEW_ADDRESS' Again!")
+                    print("ENTER 'NEW ADDRESS' :", end=" ")
+                    NEW_ADDRESS = input()
                 STUDENT_ADDRESS[LOC_ADDRESS] = NEW_ADDRESS
                 print("\t 'ADDRESS UPDATED SUCCESSFULLY.")
                 print("\n")
@@ -185,10 +232,18 @@ class STUDENT_MANAGEMENT_SYSTEM: # All STUDENT 'INFORMATION' IS HERE.
             elif ATTRIBUTE == 'EMAIL':
                 print("ENTER 'OLD EMAIL' :", end=" ")
                 OLD_EMAIL = input()
+                while not OLD_EMAIL:
+                    print("Sorry, Try to Enter The 'OLD_EMAIL' Again!")
+                    print("ENTER 'OLD EMAIL' :", end=" ")
+                    OLD_EMAIL = input()
                 LOC_EMAIL = STUDENT_EMAIL.index(OLD_EMAIL)
 
                 print("ENTER 'NEW EMAIL' :", end=" ")
                 NEW_EMAIL = input()
+                while not NEW_EMAIL:
+                    print("Sorry, Try to Enter The 'NEW_EMAIL' Again!")
+                    print("ENTER 'NEW EMAIL' :", end=" ")
+                    NEW_EMAIL = input()
                 STUDENT_EMAIL[LOC_EMAIL] = NEW_EMAIL
                 print("\t 'EMAIL - ID UPDATED SUCCESSFULLY.")
                 print("\n")
@@ -196,21 +251,39 @@ class STUDENT_MANAGEMENT_SYSTEM: # All STUDENT 'INFORMATION' IS HERE.
             elif ATTRIBUTE == 'CLASS':
                 print("ENTER 'OLD CLASS' :", end=" ")
                 OLD_CLASS = input()
+                while not OLD_CLASS:
+                    print("Sorry, Try to Enter The 'OLD_CLASS' Again!")
+                    print("ENTER 'OLD CLASS' :", end=" ")
+                    OLD_CLASS = input()
                 LOC_CLASS = STUDENT_CLASS.index(OLD_CLASS)
 
                 print("ENTER 'NEW CLASS' :", end=" ")
                 NEW_CLASS = input()
+                while not NEW_CLASS:
+                    print("Sorry, Try to Enter The 'NEW_CLASS' Again!")
+                    print("ENTER 'NEW CLASS' :", end=" ")
+                    NEW_CLASS = input()
                 STUDENT_CLASS[LOC_CLASS] = NEW_CLASS
                 print("\t 'CLASS UPDATED SUCCESSFULLY.")
                 print("\n")
 
             elif ATTRIBUTE == 'MOBILE NUMBER':
-                print("ENTER 'OLD MOBILE NUMBER' :", end=" ")
-                OLD_MOBILE = input()
+                while True:
+                    try:
+                        print("ENTER 'OLD MOBILE NUMBER' :", end=" ")
+                        OLD_MOBILE = int(input())
+                        break
+                    except ValueError:
+                        print("Please Enter a Valid 'OLD MOBILE NUMBER'")
                 LOC_MOBILE = STUDENT_MOBILE_NUMBER.index(OLD_MOBILE)
 
-                print("ENTER 'NEW MOBILE NUMBER' :", end=" ")
-                NEW_MOBILE = input()
+                while True:
+                    try:
+                        print("ENTER 'NEW MOBILE NUMBER' :", end=" ")
+                        NEW_MOBILE = int(input())
+                        break
+                    except ValueError:
+                        print("Please Enter a Valid 'NEW MOBILE NUMBER'")
                 STUDENT_MOBILE_NUMBER[LOC_MOBILE] = NEW_MOBILE
                 print("\t 'MOBILE NUMBER UPDATED SUCCESSFULLY.")
                 print("\n")
