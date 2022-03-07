@@ -29,21 +29,21 @@ STUDENT_CLASS = []
 
 
 class STUDENT_MANAGEMENT_SYSTEM: # All STUDENT 'INFORMATION' IS HERE.
-   
+
     @staticmethod
     def ADD_STUDENT_INFORMATION(): # THIS FUNCTION HELP TO 'ADD INFORMATION' FOR STUDENT.
         print("ADDING STUDENT INFORMATION : \n")
-        print("ENTER STUDENT NAME :", end=" ")
+        print("ENTER STUDENT NAME :", end=" ")# HERE YOU CAN ENTER 'STUDENT NAME'
         NAME = input().upper()
-        while not NAME:
+        while not NAME:# THIS IS USED TO CHECK THE EMPTY INPUT
             print("Sorry, Try to Enter The  'STUDENT NAME' Again!")
             print("ENTER STUDENT NAME :", end=" ")
             NAME = input().upper()
         STUDENT_NAME.append(NAME)
         
-        while True:
+        while True:#THE 'WHILE TRUE' I USED FOR INTEGER INPUT IF IT IS EMPTY TO RETURN THE FUNCTION
             try:
-                print("ENTER STUDENT ROLL NUMBER :", end=" ")
+                print("ENTER STUDENT ROLL NUMBER :", end=" ")#ADD THE STUDENT ROLL NUMBER HERE:
                 ROLL_NUMBER = int(input())
                 break
             except ValueError:
@@ -52,14 +52,14 @@ class STUDENT_MANAGEMENT_SYSTEM: # All STUDENT 'INFORMATION' IS HERE.
         
         while True:
             try:
-                print("ENTER STUDENT AGE :", end=" ")
+                print("ENTER STUDENT AGE :", end=" ")#ADD THE STUDENT AGE HERE:
                 AGE = int(input())
                 break
             except ValueError:
                 print("Please Enter a Valid Number")
         STUDENT_AGE.append(AGE)
 
-        print("ENTER STUDENT CLASS :", end=" ")
+        print("ENTER STUDENT CLASS :", end=" ")#ADD THE STUDENT CLASS HERE:
         CLASS = input().upper()
         while not CLASS:
             print("Sorry, Try to Enter The 'STUDENT CLASS' Again!")
@@ -67,7 +67,7 @@ class STUDENT_MANAGEMENT_SYSTEM: # All STUDENT 'INFORMATION' IS HERE.
             CLASS = input().upper()
         STUDENT_CLASS.append(CLASS)
 
-        print("ENTER STUDENT E-MAIL ID :", end=" ")
+        print("ENTER STUDENT E-MAIL ID :", end=" ")#ADD THE STUDENT EMAIL ID HERE:
         EMAIL_ID = input().upper()
         while not EMAIL_ID:
             print("Sorry, Try to Enter The 'STUDENT E-MAIL ID' Again!")
@@ -75,7 +75,7 @@ class STUDENT_MANAGEMENT_SYSTEM: # All STUDENT 'INFORMATION' IS HERE.
             EMAIL_ID = input().upper()
         STUDENT_EMAIL.append(EMAIL_ID)
 
-        print("ENTER STUDENT ADDRESS :", end=" ")
+        print("ENTER STUDENT ADDRESS :", end=" ")#ADD THE STUDENT ADDRESS HERE:
         ADDRESS = input().upper()
         while not ADDRESS:
             print("Sorry, Try to Enter The 'ADDRESS' Again!")
@@ -85,7 +85,7 @@ class STUDENT_MANAGEMENT_SYSTEM: # All STUDENT 'INFORMATION' IS HERE.
 
         while True:
             try:
-                print("ENTER STUDENT MOBILE NUMBER :", end=" ")
+                print("ENTER STUDENT MOBILE NUMBER :", end=" ")#ADD THE STUDENT MOBILE NUMBER HERE:
                 MOBILE_NUMBER = int(input())
                 break
             except ValueError:
@@ -374,9 +374,13 @@ if __name__ == '__main__':
         print("PRESS 4 : TO DISPLAY STUDENT INFORMATION.")
         print("PRESS 5 : TO EXIT SYSTEM.")
 
-        OPTION = int(input("ENTER YOUR OPTION : "))
-        print("\n")
-        print(end="\n")
+        while True:
+            try:
+                OPTION = int(input("ENTER YOUR OPTION : "))
+                break
+            except ValueError:
+                print("\n")
+                print("SORRY,PRESS FROM THE FOLLOWING OPTION :")
 
         if OPTION == 1:
             SMS.ADD_STUDENT_INFORMATION()
