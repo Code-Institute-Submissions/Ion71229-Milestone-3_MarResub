@@ -34,6 +34,10 @@ The following are the features that are included in this application, as mention
 
 - From the main menu the first option is to Add Student Information.
 - Press 1 to choose this option.
+- If the user does not enter a value, it will return the choosen option again. This applies to all of the empty inputs.
+
+<img src= "assets/capture_empty_screenshot.PNG">
+
 - Once the user has selected this option, they are then asked to input a value for Student Name, Roll Number, Age, Class, Email, Address and Mobile Number.
 - Once all fields have been entered the Student is saved.
 
